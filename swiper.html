@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="./js/jquery-1.8.3.min.js"></script>
+    <style>
+       *{margin:0;padding:0}
+       ul li{list-style-type: none;}
+       .wrap{position:relative;width:800px;height:400px;margin:50px auto;background:#ccc}
+       .pic ul li{width:800px;height:400px;background:#f00;display: none}
+       .pic ul li:nth-of-type(2){background:yellow}
+       .pic ul li:nth-of-type(3){background:hotpink}
+       .left,.right{width:50px;height:50px;background:#000;opacity: 0.5;position:absolute;top:50%;margin-top:-25px;}
+       .left{left:20px;}
+       .right{right:20px;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="pic">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <script>
+       $(function(){
+           /**
+            * 1.第一张显示出来
+            * 2.点击左按钮需要获取到当前的索引
+            * 3.索引进行自增或自减
+            * 4.和索引对应的li进行显示隐藏
+            * 
+           */
+           $(".pic ul li").eq(0).show()
+           var num=0
+           $(".left").click(function(){
+              num--
+              if(num<0){
+                  num=$(".pic ul li").length-1
+              }
+              $(".pic ul li").eq(num).show().siblings().hide()
+
+           })
+           $(".right").click(function(){
+              num++
+              if(num>$(".pic ul li").length-1){
+                  num=0
+              }
+              $(".pic ul li").eq(num).show().siblings().hide()
+
+           })
+       })
+
+
+       //无缝轮播
+       /**
+        * jq 操作方法  appendTo  prependTo  animate   left
+        * 
+       */
+    </script>
+</body>
+</html>
