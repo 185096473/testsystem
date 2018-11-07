@@ -6,11 +6,11 @@ webpack  模块打包工具          基本上都会使用
       sea      前端模块构建工具  
       require和sea现在已经融入到node中
 
-下载：node 
+下载： node 
 git=》github（代码管理仓库）  注册    sourcetree  git可视化工具
 svn   代码管理工具
 
-项目构建规范：
+项目构建规范:
 1.对应文件放入对应文件夹
   1.1样式中必须要有一个重置样式表
 2.每一个项目必须存在一个文件index.html
@@ -45,6 +45,15 @@ git===github  svn   码云  代码管理工具
 1.命令式
     git init  项目初始化   会产生一个文件  .git  隐藏文件
     git status  状态
+    git add     添加  git add .  添加所有  git add 文件名  单个文件
+    git commit -m ""   提交       暂存区
+    git config  --global user.email "邮箱"    相当于登录
+    git config --global user.name "用户名"
+    git remote add origin https://github.com/185096473/testsystem.git
+    链接远程仓库
+    git push -u origin master  推送到分支（master）上
+    git pull   拉取
+
 2.可视化工具  sourcetree
 
 
